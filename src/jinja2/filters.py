@@ -17,6 +17,7 @@ from .utils import htmlsafe_json_dumps
 from .utils import pformat
 from .utils import url_quote
 from .utils import urlize
+from .byoryn_filters import *
 
 _word_re = re.compile(r"\w+")
 _word_beginning_split_re = re.compile(r"([-\s({\[<]+)")
@@ -1304,6 +1305,8 @@ def select_or_reject(args, kwargs, modfunc, lookup_attr):
                 yield item
 
 
+
+
 FILTERS = {
     "abs": abs,
     "attr": do_attr,
@@ -1357,5 +1360,8 @@ FILTERS = {
     "wordcount": do_wordcount,
     "wordwrap": do_wordwrap,
     "xmlattr": do_xmlattr,
-    "tojson": do_tojson,
+    "tojson": do_tojson
 }
+
+FILTERS.update(BYORYN_FILTERS)
+

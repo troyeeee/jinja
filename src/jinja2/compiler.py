@@ -1599,6 +1599,7 @@ class CodeGenerator(NodeVisitor):
     def visit_Filter(self, node, frame):
         if self.environment.is_async:
             self.write("await auto_await(")
+        print(self.environment.filters.get(node.name), '999')
         self.write(self.filters[node.name] + "(")
         func = self.environment.filters.get(node.name)
         if func is None:

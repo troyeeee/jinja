@@ -478,6 +478,7 @@ class Environment:
         .. versionadded:: 2.7
         """
         func = self.filters.get(name)
+        print(self.filters,'66666666666666666666666666666666')
         if func is None:
             fail_for_missing_callable("filter", name)
         args = [value] + list(args or ())
